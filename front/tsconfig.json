@@ -1,0 +1,32 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+
+    "paths": {
+      "@components": ["components"],
+      "@context": ["context"],
+      "@assets": ["assets"],
+      "@pages": ["pages"],
+      "@hooks": ["hooks"],
+      "@utils": ["utils"],
+      "@api": ["api"],
+    }
+  },
+  "include": ["src", "./*.ts"]
+}

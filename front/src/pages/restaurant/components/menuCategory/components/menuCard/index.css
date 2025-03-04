@@ -1,0 +1,29 @@
+.restaurant-page__menu-card {
+  display: flex;
+  flex-direction: row;
+
+  max-width: 300px;
+  min-height: 150px;
+
+  background: var(--bg-third);
+
+  border: 1px white solid;
+  border-radius: var(--radius-l);
+  padding: var(--space-l);
+  gap: var(--space-l);
+
+  justify-content: center;
+
+  grid-column: span 2;
+}
+
+.restaurant-page__card-info {
+  max-width: 50%;
+}
+
+.restaurant-page__card-actions {
+  display: flex;
+  flex-flow: column;
+  align-items: end;
+  row-gap: var(--space-m);
+}

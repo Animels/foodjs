@@ -1,0 +1,21 @@
+.restaunrant-page__rest-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-l);
+  gap: var(--space-m);
+
+  background: var(--bg-secondary);
+}
+
+.restaunrant-page__container {
+  display: flex;
+  flex-direction: row;
+
+  gap: var(--space-l);
+}
+
+.restaunrant-page__info-container {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "e-com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "setup-main": "npm install",
+    "setup-front": "cd ./back && npm install --no-workspaces",
+    "setup-back": "cd ./front && npm install --no-workspaces",
+    "setup": "npm run setup-back && npm run setup-front && npm run setup-main",
+    "start-front": "cd ./front && npm run start",
+    "start-back": "cd ./back && npm run start",
+    "start": "npm run start-back && npm run start-front",
+    "lint": "eslint ."
+  },
+  "private": "true",
+  "workspaces": [
+    "back",
+    "front"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
+    "@typescript-eslint/parser": "^8.21.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.4.2",
+    "typescript": "~5.6.2",
+    "typescript-eslint": "^8.18.2"
+  },
+  "dependencies": {
+    "zustand": "^5.0.3"
+  }
+}

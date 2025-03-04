@@ -1,0 +1,26 @@
+.sidebar__block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sidebar__row {
+  flex-direction: column;
+  display: flex;
+  gap: 3px;
+}
+
+.sidebar__row--round {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.sidebar__block-text {
+  width: 100%;
+}
+
+.sidebar__text--nothing-found {
+  padding: 5px;
+  white-space: wrap !important;
+  text-align: center;
+}

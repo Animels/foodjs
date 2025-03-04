@@ -1,0 +1,11 @@
+.landing-layout {
+  height: 100%;
+
+  flex-direction: column;
+}
+
+.landing-layout__container {
+  height: calc(100% - 77.19px);
+
+  background: var(--bg-primary);
+}

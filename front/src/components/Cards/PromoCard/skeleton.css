@@ -1,0 +1,9 @@
+.skeleton-promo-card {
+  height: 120px;
+  width: 280px;
+
+  background: var(--skeleton-bg);
+  background-size: var(--skeleton-bg-size);
+  animation: var(--skeleton-animation);
+  border-radius: var(--radius-m);
+}

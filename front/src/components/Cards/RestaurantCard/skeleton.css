@@ -1,0 +1,28 @@
+.skeleton-rest-card {
+  height: 160px;
+
+  background: var(--skeleton-bg);
+  background-size: var(--skeleton-bg-size);
+  animation: var(--skeleton-animation);
+  border-radius: var(--radius-m);
+
+  grid-column: span 3;
+}
+
+.skeleton-rest-card--s {
+  width: 230px;
+}
+
+.skeleton-rest-card--m {
+  width: 300px;
+}
+
+.skeleton-rest-card--l {
+  width: 100%;
+}
+
+@media (min-width: 1120px) {
+  .skeleton-rest-card {
+    grid-column: span 4;
+  }
+}

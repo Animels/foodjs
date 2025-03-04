@@ -1,0 +1,39 @@
+.input {
+  position: relative;
+  max-width: 100%;
+}
+
+.input--fullWidth {
+  width: 100%;
+}
+
+.input__inner {
+  width: 100%;
+
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+
+  box-sizing: border-box;
+
+  height: 30px;
+
+  &::placeholder {
+    font-weight: bold;
+    color: var(--text-secondary);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+.input__clear {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  translate: 0 -50%;
+}

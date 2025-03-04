@@ -1,0 +1,9 @@
+.skeleton-button {
+  width: 100%;
+  height: 43px;
+
+  background: var(--skeleton-bg);
+  background-size: var(--skeleton-bg-size);
+  animation: var(--skeleton-animation);
+  border-radius: var(--radius-m);
+}

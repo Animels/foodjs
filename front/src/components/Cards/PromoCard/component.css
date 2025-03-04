@@ -1,0 +1,21 @@
+.promo-card {
+  display: flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+
+  width: 280px;
+
+  background: var(--bg-secondary);
+}
+
+.promo-card__prev {
+  height: 100%;
+}
+
+.promo-card__container {
+  box-sizing: border-box;
+  margin: auto;
+}

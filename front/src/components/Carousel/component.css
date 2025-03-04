@@ -1,0 +1,26 @@
+.carousel__wrap {
+  position: relative;
+}
+
+.carousel__container {
+  display: flex;
+  overflow: hidden;
+
+  column-gap: var(--space-m)
+}
+
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
+
+.carousel__button--right {
+  right: 0;
+  transform: translateX(30px);
+}
+
+.carousel__button--left {
+  left: 0;
+  transform: translateX(-30px);
+}

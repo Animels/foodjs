@@ -1,0 +1,30 @@
+.switch {
+  background-color: var(--main-secondary);
+
+  display: flex;
+  align-items: center;
+
+  min-width: 50px;
+  min-height: 24px;
+  padding: var(--space-s);
+  border-radius: var(--radius-xl);
+
+  cursor: pointer;
+}
+
+.switch__slider {
+  background-color: rgb(197, 186, 186);
+
+  width: 22px;
+  height: 22px;
+  border-radius: 100px;
+
+  cursor: pointer;
+
+  transition: transform 0.5s ease;
+  transform: translateX(0px);
+}
+
+.switch__slider--on {
+  transform: translateX(28px);
+}

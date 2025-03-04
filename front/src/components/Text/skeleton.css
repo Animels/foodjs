@@ -1,0 +1,9 @@
+.skeleton-text-container {
+  height: 24px;
+  width: 50%;
+
+  background: var(--skeleton-bg);
+  background-size: var(--skeleton-bg-size);
+  animation: var(--skeleton-animation);
+  border-radius: var(--radius-m);
+}

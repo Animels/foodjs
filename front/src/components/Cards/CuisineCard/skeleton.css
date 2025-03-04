@@ -1,0 +1,9 @@
+.skeleton-cusine-card {
+  width: 100px;
+  height: 100px;
+
+  background: var(--skeleton-bg);
+  background-size: var(--skeleton-bg-size);
+  animation: var(--skeleton-animation);
+  border-radius: var(--radius-m);
+}

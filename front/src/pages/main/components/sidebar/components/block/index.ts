@@ -1,0 +1,1 @@
+export { SidebarBlock } from './component';

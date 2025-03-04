@@ -1,0 +1,19 @@
+.land {
+  display: grid;
+  grid-template-rows: minmax(180px, 1fr);
+
+  padding: 0 0 var(--space-l) 0;
+  gap: var(--space-l)
+}
+
+@media (min-width: 768px) {
+  .land {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1120px) {
+  .land {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}

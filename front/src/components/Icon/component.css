@@ -1,0 +1,27 @@
+.icon {
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon__body {
+  height: 20px;
+  width: 20px;
+}
+
+.icon__body--s {
+  height: 16px;
+  width: 16px;
+}
+
+.icon__body--m {
+  height: 20px;
+  width: 20px;
+}
+
+.icon__body--l {
+  height: 24px;
+  width: 24px;
+}

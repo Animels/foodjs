@@ -1,0 +1,35 @@
+.modal {
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  z-index: 100;
+}
+
+.modal__container {
+  background: var(--bg-primary);
+
+  height: 25%;
+  border-radius: var(--radius-l);
+
+  box-shadow: 7px 7px;
+  border-style: solid;
+  overflow: hidden;
+}
+
+.modal__header {
+  height: 10%;
+}
+
+.modal__body {
+  height: 90%;
+  padding: var(--space-m);
+}

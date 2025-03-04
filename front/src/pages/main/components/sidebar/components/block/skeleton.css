@@ -1,0 +1,20 @@
+.skeleton-sidebar-block {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.skeleton-sidebar-block__row {
+  flex-direction: column;
+  display: flex;
+  gap: var(--space-s)
+}
+
+.skeleton-sidebar-block__row--round {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.skeleton-sidebar-block__block-text {
+  width: 100%;
+}

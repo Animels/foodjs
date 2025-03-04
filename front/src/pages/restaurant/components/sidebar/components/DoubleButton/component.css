@@ -1,0 +1,28 @@
+.double-button {
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+}
+
+.double-button__container-s,
+.double-button__container-f {
+  width: 100%;
+  background: var(--bg-third);
+
+  padding: var(--space-m);
+
+  transition: background 0.3s ease;
+}
+
+.double-button__container-f {
+  border-radius: var(--radius-m) 0 0 var(--radius-m);
+}
+
+.double-button__container-s {
+  border-radius: 0 var(--radius-m) var(--radius-m) 0;
+}
+
+.double-button__container-f--active,
+.double-button__container-s--active {
+  background: var(--bg-primary);
+}

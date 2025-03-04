@@ -1,0 +1,12 @@
+.restaurant-page__menu-category {
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-page__category-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(180px, 1fr);
+
+  gap: var(--space-l);
+}

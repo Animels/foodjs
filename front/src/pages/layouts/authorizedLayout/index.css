@@ -1,0 +1,9 @@
+.auth-layout {
+  height: 100%;
+  background: var(--bg-primary);
+  overflow-y: scroll;
+}
+
+.auth-layout__container {
+  max-width: 100%;
+}

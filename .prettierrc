@@ -1,0 +1,17 @@
+{
+  "arrowParens": "always",
+  "editorconfig": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^(\\.\\.\\/){4,}",
+    "^(\\.\\.\\/){3}",
+    "^(\\.\\.\\/){2}",
+    "^\\.\\.\\/",
+    "^\\./"
+  ],
+  "importOrderParserPlugins": ["typescript", "jsx"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

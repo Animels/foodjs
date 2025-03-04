@@ -1,0 +1,24 @@
+.cuisine-card {
+  display: flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+
+  width: 100px;
+  height: 100px;
+
+  background: var(--bg-secondary);
+
+  cursor: pointer;
+}
+
+.cuisine-card__prev {
+  height: 70%;
+}
+
+.cuisine-card__container {
+  box-sizing: border-box;
+  margin: auto;
+}

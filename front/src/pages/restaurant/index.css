@@ -1,0 +1,16 @@
+.restaurant-page {
+  height: 100%;
+}
+
+.restaurant-page__container {
+  display: flex;
+  justify-content: space-evenly;
+
+  padding: var(--space-l);
+  gap: var(--space-l);
+}
+
+.restaurant-page__menu-container {
+  display: flex;
+  flex-direction: column;
+}

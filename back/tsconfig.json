@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "paths": {
+      "@prismaClient": ["prisma/prismaClient.js"],
+      "@controllers": ["src/controllers/index.js"],
+      "@middlewares": ["src/middlewares/index.js"],
+      "@models": ["src/models/index.js"],
+      "@routes": ["src/routes/index.js"],
+      "@services": ["src/repository/index.js"],
+      "@utils": ["src/utils/index.js"],
+      "@types": ["src/types.ts"]
+    },
+    "typeRoots": ["./src/types.ts"]
+  },
+  "include": ["src", "prisma", "./*.ts", "seeds"]
+}

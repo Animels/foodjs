@@ -1,0 +1,24 @@
+.sidebar__product-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-third);
+
+  padding: var(--space-m);
+  gap: var(--space-l);
+
+  border-radius: var(--radius-s);
+}
+
+.sidebar__action-row {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.sidebar__action-main {
+  display: flex;
+
+  gap: var(--space-s);
+
+  justify-content: space-evenly;
+}

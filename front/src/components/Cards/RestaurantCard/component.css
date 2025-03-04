@@ -1,0 +1,55 @@
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+  border-radius: var(--radius-m);
+  border: 1px solid;
+  overflow: hidden;
+
+  background: var(--bg-secondary);
+
+  cursor: pointer;
+
+  grid-column: span 3;
+}
+
+.restaurant-card__prev {
+  height: 70%;
+}
+
+.restaurant-card__container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-s);
+}
+
+.restaurant-card__row {
+  display: flex;
+  flex-direction: row;
+  column-gap: var(--space-s);
+}
+
+.restaurant-card__price {
+}
+
+.restaurant-card__cuisine {
+}
+
+.restaurant-card--s {
+  max-width: 230px;
+}
+
+.restaurant-card--m {
+  max-width: 300px;
+}
+
+.restaurant-card--l {
+  width: 100%;
+}
+
+@media (min-width: 1120px) {
+  .restaurant-card {
+    grid-column: span 4;
+  }
+}

@@ -1,0 +1,64 @@
+.state-button {
+  display: flex;
+  align-items: center;
+  column-gap: var(--space-s);
+  cursor: pointer;
+}
+
+.state-button--round {
+  background: var(--bg-third);
+  color: white;
+  border-radius: var(--radius-m);
+  border: 1px white solid;
+  padding: var(--space-xs);
+}
+
+.state-button--checked {
+  background: var(--text-secondary);
+}
+
+.state-button__inner-button {
+  height: 15px;
+  width: 15px;
+  transition: background 0.5s ease-in;
+}
+
+.state-button__inner-button--round {
+  display: none;
+}
+
+.state-button__inner-button--checkbox,
+.state-button__inner-button--radio {
+  background: #ffffff;
+}
+
+.state-button__inner-button--radio {
+  border-radius: var(--radius-xl);
+}
+
+.state-button__inner-button--checkbox {
+  border-radius: var(--radius-xs);
+}
+
+.state-button__inner-button--checked {
+  position: relative;
+  background: #000;
+}
+
+.state-button__inner-button--radio.state-button__inner-button--checked::before,
+.state-button__inner-button--checkbox.state-button__inner-button--checked::before {
+  content: '';
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 6px;
+  width: 6px;
+  background: #ffffff;
+}
+
+.state-button__inner-button--radio.state-button__inner-button--checked::before {
+  border-radius: var(--radius-xl);
+}

@@ -1,0 +1,11 @@
+.skeleton-input {
+  height: 20px;
+  width: 100%;
+
+  flex-shrink: 0;
+
+  background: var(--skeleton-bg);
+  background-size: var(--skeleton-bg-size);
+  animation: var(--skeleton-animation);
+  border-radius: var(--radius-m);
+}

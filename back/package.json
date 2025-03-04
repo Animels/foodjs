@@ -1,0 +1,38 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "prettier": "prettier --write .",
+    "start-dev": "npx vite-node src/main.ts --watch"
+  },
+  "prisma": {
+    "seed": "npx vite-node seeds/seed.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.33.0",
+    "@faker-js/faker": "^9.4.0",
+    "@prisma/client": "^6.2.1",
+    "@types/cors": "^2.8.17",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^6.2.1",
+    "tsx": "^4.19.2",
+    "vite": "^6.0.11",
+    "vite-node": "^3.0.4",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.8",
+    "@types/node": "^22.10.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
