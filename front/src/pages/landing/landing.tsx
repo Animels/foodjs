@@ -1,9 +1,8 @@
+import testImg from '@assets/landing_img.webp';
 import { Button, Form, FormInput, MultiForm } from '@components';
 import { StepProvider, useAuth } from '@context';
 import { makeClassName } from '@utils';
 import { useForm } from 'react-hook-form';
-
-import testImg from '../../assets/landing_img.webp';
 
 import './index.css';
 

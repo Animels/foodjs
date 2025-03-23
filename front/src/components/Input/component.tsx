@@ -1,21 +1,9 @@
-import { Icon, Text } from '@components';
+import { ICON_TYPES, Icon, Text } from '@components/core';
 import { makeClassName } from '@utils';
-import { ICON_TYPES } from 'components/Icon/types';
-import { ChangeEvent, forwardRef, memo, useCallback, useImperativeHandle, useRef } from 'react';
-import { ControllerRenderProps } from 'react-hook-form';
+import { forwardRef, memo, useCallback, useImperativeHandle, useRef } from 'react';
 
 import './component.css';
-
-type InputProps = {
-  className?: string;
-  placeholder?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
-  onClear?: () => void;
-  label?: string;
-  field?: ControllerRenderProps;
-  fullWidth?: boolean;
-  disabled?: boolean;
-};
+import { InputProps } from './types';
 
 const Input = forwardRef(({ className, placeholder, onChange, onClear, label, field, fullWidth, disabled }: InputProps, ref) => {
   const intRef = useRef<HTMLInputElement>(null);
@@ -48,4 +36,3 @@ const Input = forwardRef(({ className, placeholder, onChange, onClear, label, fi
 const mem = memo(Input);
 
 export { mem as Input };
-export type { InputProps };

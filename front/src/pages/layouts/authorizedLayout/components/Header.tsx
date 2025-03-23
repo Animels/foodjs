@@ -1,6 +1,6 @@
 import { Button, Header, Icon, Popover, ThemeSwitcher } from '@components';
 import { useAuth } from '@context';
-import { ICON_TYPES } from 'components/Icon/types';
+import { ICON_TYPES } from '@components/core/Icon/types';
 
 export const AuthHeader = () => {
   const { logout } = useAuth();

@@ -20,12 +20,14 @@
 
     "paths": {
       "@components": ["components"],
+      "@constants/*": ["constants/*"],
+      "@components/*": ["components/*"],
       "@context": ["context"],
-      "@assets": ["assets"],
+      "@assets/*": ["assets/*"],
       "@pages": ["pages"],
       "@hooks": ["hooks"],
       "@utils": ["utils"],
-      "@api": ["api"],
+      "@api": ["api"]
     }
   },
   "include": ["src", "./*.ts"]

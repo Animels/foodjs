@@ -1,9 +1,8 @@
+import testImg from '@assets/test.png';
 import { Button, ICON_TYPES, Icon, Image, Text } from '@components';
 import { makeClassName } from '@utils';
 import { Product } from 'models';
 import { useCartStore } from 'store';
-
-import testImg from '../../../../../../assets/test.png';
 
 import './index.css';
 

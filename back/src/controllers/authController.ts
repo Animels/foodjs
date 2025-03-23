@@ -7,18 +7,12 @@ export const register = async (req: RegisterBody, res: Response, next: NextFunct
   const { email, password } = req.body;
 
   if (!email || !password) {
-    res.status(400).json({
-      success: false,
-      message: 'Email and password are required.',
-    });
+    res.sendResponse(false, null, 'Email and password are required.', 400);
   }
 
   try {
     await authRepository.createUser(email, password);
-    res.json({
-      success: true,
-      message: 'User created successfully!',
-    });
+    res.sendResponse(true, {});
   } catch (err) {
     next(err);
   }
@@ -31,7 +25,6 @@ export const login = async (req: RegisterBody, res: Response, next: NextFunction
   if (email && password) {
     try {
       user = await authRepository.findUser({ email });
-      console.log(user);
     } catch (e) {
       next(e);
     }
@@ -58,25 +51,16 @@ export const login = async (req: RegisterBody, res: Response, next: NextFunction
             expires: tokenInfo.refreshExpiresAt,
           });
 
-          res.status(200).json({
-            success: true,
-            message: 'You are logged in!',
-          });
+          res.sendResponse(true, {});
         } catch (e) {
           next(e);
         }
       } else {
-        res.status(400).json({
-          success: false,
-          message: 'User passwords do not match!',
-        });
+        res.sendResponse(false, null, 'User passwords do not match!', 400);
       }
     }
   } else {
-    res.status(400).json({
-      success: false,
-      message: `Email or password is not provided!`,
-    });
+    res.sendResponse(false, null, `Email or password is not provided!`, 400);
   }
 };
 
@@ -114,16 +98,10 @@ export const refresh = async (req: Request, res: Response, next: NextFunction) =
         if (redirect) {
           res.redirect(decodeURIComponent(redirect as string));
         } else {
-          res.json({
-            success: true,
-            message: 'You are logged in!',
-          });
+          res.sendResponse(true, {});
         }
       } else {
-        res.status(400).json({
-          success: false,
-          message: 'Failed to find refreshToken',
-        });
+        res.sendResponse(false, {}, 'Failed to find refreshToken', 400);
       }
     }
   } catch (e) {
@@ -135,21 +113,16 @@ export const check = async (req: Request, res: Response, next: NextFunction) => 
   let authHeader = req.headers?.authorization || req.headers?.cookie;
 
   if (!authHeader) {
-    res.status(401).json({
-      success: false,
-      message: 'Unauthorized!',
-    });
+    res.sendResponse(false, null, 'Unauthorized!', 401);
     return;
   }
+
   const tokens = extractTokens(authHeader);
   const accessToken = tokens['Auth-token'];
   const refreshToken = tokens['Refresh-token'];
 
   if (!accessToken && !refreshToken) {
-    res.status(401).json({
-      success: false,
-      message: 'No tokens are provided',
-    });
+    res.sendResponse(false, {}, 'No tokens are provided', 400);
     return;
   }
 
@@ -158,7 +131,7 @@ export const check = async (req: Request, res: Response, next: NextFunction) => 
     await tokenRepository.deleteExpiredUserTokens(decoded.id);
     const userTokens = await tokenRepository.getUserTokens(decoded.id);
 
-    res.status(200).json({ message: userTokens.some((t) => t.acessToken === accessToken) });
+    res.sendResponse(true, { message: userTokens.some((t) => t.acessToken === accessToken) });
   } catch (e) {
     next(e);
   }

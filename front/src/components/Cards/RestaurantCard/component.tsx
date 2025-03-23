@@ -1,22 +1,26 @@
-import { Text } from '@components';
+import { Text } from '@components/core';
+import { ROUTES, pathTo } from '@constants/paths';
 import { makeClassName } from '@utils';
-import {  Restaurant } from 'models';
+import { Restaurant } from 'models';
+import { useNavigate } from 'react-router';
 
 import './component.css';
-import { useNavigate } from 'react-router';
 
 type RestaurantCardProps = {
   previewImg: string;
-  restaurant: Restaurant
+  restaurant: Restaurant;
   size?: 's' | 'm' | 'l';
 };
 
 const RestaurantCard = ({ previewImg, restaurant, size }: RestaurantCardProps) => {
-  const navigator = useNavigate()
-  const categories = restaurant.category.map((cat) => cat.name)
+  const navigator = useNavigate();
+  const categories = restaurant.category.map((cat) => cat.name);
 
   return (
-    <div onClick={() => navigator(`/restaurants/${restaurant.id}`)} className={makeClassName('restaurant-card', undefined, { key: size ?? 's' })}>
+    <div
+      onClick={() => navigator(pathTo(ROUTES.RESTAURANT, { id: restaurant.id }))}
+      className={makeClassName('restaurant-card', undefined, { key: size ?? 's' })}
+    >
       <img className={makeClassName('restaurant-card', 'prev')} src={previewImg} />
       <div className={makeClassName('restaurant-card', 'container')}>
         <Text>{restaurant.name}</Text>

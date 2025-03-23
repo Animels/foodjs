@@ -1,11 +1,11 @@
-.landing-layout {
+.unauth-layout {
   height: 100%;
 
   flex-direction: column;
 }
 
-.landing-layout__container {
-  height: calc(100% - 77.19px);
+.unauth-layout__container {
+  height: calc(100% - 80px);
 
   background: var(--bg-primary);
 }

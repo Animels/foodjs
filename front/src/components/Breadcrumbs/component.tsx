@@ -1,4 +1,4 @@
-import { Link } from '@components';
+import { Link } from '@components/core';
 import { makeClassName } from '@utils';
 import { useLocation } from 'react-router';
 

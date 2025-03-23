@@ -1,6 +1,6 @@
-import { Loader } from '@components';
+import { Loader } from '@components/core/Loader';
+import { ROUTES } from '@constants/paths';
 import { useAuth } from '@context';
-import { ROUTES } from 'pages/routes';
 import { Navigate, Outlet } from 'react-router';
 
 const UnauthGuard = () => {
@@ -8,8 +8,7 @@ const UnauthGuard = () => {
 
   if (isLoading) return <Loader />;
 
-
-  return isAuthenticated ? <Navigate to={ROUTES.restaurants} /> : <Outlet />;
+  return isAuthenticated ? <Navigate to={ROUTES.RESTAURANTS} /> : <Outlet />;
 };
 
 export { UnauthGuard };

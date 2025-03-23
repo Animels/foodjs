@@ -1,5 +1,5 @@
 import { Header, Icon, Text } from '@components';
-import { ICON_TYPES } from 'components/Icon/types';
+import { ICON_TYPES } from '@components/core/Icon/types';
 
 const MobileHeader = () => {
   return (

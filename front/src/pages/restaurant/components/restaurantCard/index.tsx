@@ -1,8 +1,7 @@
+import testImg from '@assets/test.png';
 import { Breadcrumbs, Image, Text } from '@components';
 import { makeClassName } from '@utils';
 import { Restaurant } from 'models';
-
-import testImg from '../../../../assets/test.png';
 
 import './index.css';
 

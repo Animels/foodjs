@@ -1,3 +1,4 @@
+import testImg from '@assets/test.png';
 import {
   CuisineCard,
   Delimeter,
@@ -10,13 +11,11 @@ import {
   SuspendedInput,
   ToSuspend,
 } from '@components';
+import { ICON_TYPES } from '@components/core/Icon/types';
 import { useFilteredRestaurants, useSearch } from '@hooks';
 import { makeClassName } from '@utils';
-import { ICON_TYPES } from 'components/Icon/types';
 import { Suspense, useEffect } from 'react';
 import { useRestaurauntStore } from 'store';
-
-import testImg from '../../assets/test.png';
 
 import { SkeletonCarouselCusine, SkeletonCarouselPromo, SkeletonCarouselRest, SupendedSidebar } from './components';
 import './index.css';

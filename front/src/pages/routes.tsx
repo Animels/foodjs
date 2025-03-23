@@ -1,116 +1,35 @@
 import { AuthGuard, UnauthGuard } from '@components';
-import { ReactNode } from 'react';
-import { Outlet, Route } from 'react-router';
+import { Route, Routes } from 'react-router';
 
 import { AuthorizedLayout, Landing, Main, UnauthorizedLayout } from './index';
 import { RestaurantPage } from './restaurant';
 
-type RouteNode = {
-  element: ReactNode;
-  children?: Record<string, RouteNode>;
-  path?: string;
-  navigate?: (any: any) => void;
-};
-
-type RouteNodeRecord = Record<string, RouteNode>;
-
-export const routes: RouteNodeRecord = {
-  unauthGuard: {
-    element: <UnauthGuard />,
-    children: {
-      unauthLayout: {
-        element: <UnauthorizedLayout />,
-        children: {
-          index: {
-            path: '/',
-            element: <Landing />,
-          },
-        },
-      },
-    },
-  },
-  authGuard: {
-    element: <AuthGuard />,
-    children: {
-      authLayout: {
-        element: <AuthorizedLayout />,
-        children: {
-          mainLayout: {
-            element: <Outlet />,
-            children: {
-              restaurants: {
-                path: '/restaurants',
-                element: <Main />,
-              },
-              pickUp: {
-                path: '/pick-up',
-                element: <Main />,
-              },
-              shops: {
-                path: '/shops',
-                element: <Main />,
-              },
-            },
-          },
-          restaurant: {
-            path: '/restaurants/:id',
-            navigate: (id) => `/restaurants/${id}`,
-            element: <RestaurantPage/>,
-          },
-          checkout: {
-            path: '/checkout/:id',
-            navigate: (id) => `/checkout/${id}`,
-            element: <Main />,
-          },
-          profile: {
-            path: '/profile',
-            element: <Main />,
-          },
-          orders: {
-            path: '/orders',
-            element: <Main />,
-          },
-          trackOrders: {
-            path: '/orders/:id',
-            navigate: (id) => `/checkout/${id}`,
-            element: <Main />,
-          },
-        },
-      },
-    },
-  },
-};
-
-export const flatRoutes = <T extends RouteNodeRecord>(routes: T) => {
-  let result: Record<string, string> = {};
-
-  Object.entries(routes).forEach(([key, { path, children }]) => {
-    if (path) {
-      result[key] = path;
-    }
-    if (children) {
-      result = { ...result, ...flatRoutes(children) };
-    }
-  });
-
-  return result;
-};
-
-export const generateRoutes = (routes: RouteNodeRecord) => {
-  const test = Object.entries(routes).map(([key, { path, element, children }]) => {
-    if (children) {
-      return (
-        <Route key={key} element={element}>
-          {generateRoutes(children)}
+export const Router = () => {
+  return (
+    <Routes>
+      <Route element={<UnauthGuard />}>
+        <Route element={<UnauthorizedLayout />}>
+          <Route path={'/'} element={<Landing />} />
         </Route>
-      );
-    }
-    if (path) {
-      return <Route key={key} element={element} path={path} />;
-    }
-  });
+      </Route>
 
-  return test;
+      <Route element={<AuthGuard />}>
+        <Route element={<AuthorizedLayout />}>
+          <Route path={'/restaurants'} element={<Main />} />
+          <Route path={'/pick-up'} element={<Landing />} />
+          <Route path={'/shops'} element={<Landing />} />
+
+          <Route path={'/restaurants/:id'} element={<RestaurantPage />} />
+          <Route path={'/pick-up/:id'} element={<RestaurantPage />} />
+          <Route path={'/shops/:id'} element={<RestaurantPage />} />
+
+          <Route path={'/checkout/:id'} element={<Landing />} />
+
+          <Route path={'/profile'} element={<Landing />} />
+          <Route path={'/orders'} element={<Landing />} />
+          <Route path={'/orders/:id'} element={<Landing />} />
+        </Route>
+      </Route>
+    </Routes>
+  );
 };
-
-export const ROUTES = flatRoutes(routes);

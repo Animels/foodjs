@@ -25,14 +25,10 @@ export const generateRefToken = (id: number, name: string | null) => {
   );
 };
 
-export const decodeToken = (token: string, type: 'refresh' | 'access') => {
-  if (token) {
-    if (type === 'refresh') {
-      return jwt.verify(token, jwt_sec_ref);
-    } else {
-      return jwt.verify(token, jwt_sec_acc);
-    }
+export const decodeToken = (token: string, type: 'refresh' | 'access'): jwt.JwtPayload => {
+  if (type === 'refresh') {
+    return jwt.verify(token, jwt_sec_ref) as jwt.JwtPayload;
   } else {
-    return 'No token provided';
+    return jwt.verify(token, jwt_sec_acc) as jwt.JwtPayload;
   }
 };

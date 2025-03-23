@@ -1,17 +1,18 @@
-import { Carousel } from '.';
-import { ToSuspend } from 'components/ToSuspend';
+import { ToSuspend } from '@components/core/ToSuspend';
 import { ReactNode, Suspense } from 'react';
+
+import { Carousel } from './component';
 
 const SuspendedCarousel = ({
   fallback,
   isLoading,
   children,
-  label
+  label,
 }: {
   fallback: ReactNode;
   isLoading: boolean;
   children: ReactNode;
-  label?: string
+  label?: string;
 }) => {
   return (
     <Suspense fallback={fallback}>

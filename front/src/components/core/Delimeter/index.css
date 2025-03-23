@@ -1,0 +1,7 @@
+.delimeter {
+  width: 100%;
+  height: 1px;
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+  margin: var(--space-m) 0;
+}

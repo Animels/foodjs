@@ -1,4 +1,4 @@
-import { ModalProps } from '@components';
+import { ModalProps } from '@components/Modals/Modal/types';
 import { ReactNode, createContext, createElement, useContext, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { FieldValues } from 'react-hook-form';
@@ -46,7 +46,10 @@ const ModalProvider = ({ children }: IModalContextProps) => {
           };
           if (!root) return null;
 
-          return createPortal(modal.component ? createElement(modal.component, modalProps) : <>Modal Holder</>, root);
+          return createPortal(
+            modal.component ? createElement(modal.component, modalProps as ModalProps) : <>Modal Holder</>,
+            root
+          );
         })}
     </ModalContext.Provider>
   );

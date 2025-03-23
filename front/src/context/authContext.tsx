@@ -1,5 +1,5 @@
 import { authApi } from '@api';
-import { ROUTES } from 'pages/routes';
+import { ROUTES } from '@constants/paths';
 import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 
@@ -28,9 +28,9 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const check = async () => {
     const data = await authApi.check();
-    setIsAuthenticated(data.data?.message ?? false);
+    setIsAuthenticated(data.status === 200);
     setIsLoading(false);
-    return data.data?.message ?? false;
+    return data.status === 200;
   };
 
   const login = async (vals: { email: string; password: string }) => {
@@ -45,7 +45,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
     setIsLoading(false);
 
-    navigator(ROUTES.restaurants);
+    navigator(ROUTES.RESTAURANTS);
   };
 
   const register = async (vals: { email: string; password: string }) => {
@@ -67,10 +67,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     check().then((data) => {
-      if (!data || data)
-        authApi.refresh().then((res) => {
-          if (res.status === 200) check();
-        });
+      if (data) authApi.refresh();
     });
   }, []);
 

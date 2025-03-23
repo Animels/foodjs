@@ -4,11 +4,7 @@ export const makeClassName = (
   modifier?: Record<string, boolean | string | undefined>
 ) => {
   const classNames = [];
-  let className = element;
-
-  if (block) {
-    className += `__${block}`;
-  }
+  let className = block ? `${element}__${block}` : element;
 
   classNames.push(className);
 

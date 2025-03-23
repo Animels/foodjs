@@ -1,6 +1,5 @@
+import { ICON_TYPES, Icon } from '@components/core';
 import { makeClassName } from '@utils';
-import { Icon } from 'components/Icon/component';
-import { ICON_TYPES } from 'components/Icon/types';
 import { ReactElement, memo, useState } from 'react';
 
 import './component.css';
@@ -16,7 +15,7 @@ type ButtonProps = {
   fullWidth?: boolean;
 };
 
-const Button = ({ children, className, onClick, variant, size, fullWidth = false }: ButtonProps) => {
+const Button = ({ children, className, onClick, variant = 'primary', size, fullWidth = false }: ButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const combinedOnclick = () => {
@@ -25,11 +24,11 @@ const Button = ({ children, className, onClick, variant, size, fullWidth = false
   };
 
   return (
-    <div
+    <button
       onClick={combinedOnclick}
       className={makeClassName('button', undefined, {
         fullWidth,
-        key: variant ?? 'primary',
+        key: variant,
         key1: variant === 'round' ? `round${size}` : size,
         mixin: className,
       })}
@@ -38,7 +37,7 @@ const Button = ({ children, className, onClick, variant, size, fullWidth = false
       {variant === 'drop' && (
         <Icon className={makeClassName('button', 'icon')} icon={isOpen ? ICON_TYPES.CARET_UP : ICON_TYPES.CARET_DOWN} />
       )}
-    </div>
+    </button>
   );
 };
 

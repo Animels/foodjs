@@ -1,10 +1,10 @@
-import { Button, Icon, Text } from '@components';
+import { Button } from '@components/Buttons';
+import { ICON_TYPES, Icon, Text } from '@components/core';
 import { makeClassName } from '@utils';
-import { ICON_TYPES } from 'components/Icon/types';
 import { MutableRefObject, ReactNode, useEffect, useRef, useState } from 'react';
+import { useRestaurauntStore } from 'store';
 
 import './component.css';
-import { useRestaurauntStore } from 'store';
 
 type CarouselProps = {
   children: ReactNode;
@@ -15,7 +15,7 @@ const Carousel = ({ children, label }: CarouselProps) => {
   const carouselRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const [isScrolledEnd, setIsScrolledEnd] = useState(false);
   const [isScrolledStart, setIsScrolledStart] = useState(true);
-  const filters = useRestaurauntStore((store) => store.filters)
+  const filters = useRestaurauntStore((store) => store.filters);
 
   const checkScrollPosition = () => {
     if (carouselRef.current) {

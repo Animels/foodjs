@@ -53,18 +53,15 @@
   width: 60px;
 }
 
+.button--transparent,
 .button--drop {
   display: flex;
+  background: transparent;
   border: 0;
 }
 
 .button--fullWidth {
   width: 100%;
-}
-
-.button--transparent {
-  background: transparent;
-  border: 0;
 }
 
 .button--s {

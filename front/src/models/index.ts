@@ -1,1 +1,2 @@
-export type * from "./mainModel.js"
+export type * from "./mainModel"
+export type * from "./routes"

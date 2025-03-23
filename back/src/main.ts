@@ -1,4 +1,4 @@
-import { errorHandler } from '@middlewares';
+import { errorHandler, requestConstructor } from '@middlewares';
 import { authRouter, cartRouter, productRouter, restaurantRouter } from '@routes';
 import cors from 'cors';
 import express from 'express';
@@ -14,6 +14,7 @@ app.use(
     credentials: true,
   })
 );
+app.use(requestConstructor);
 
 app.use('/auth', authRouter);
 

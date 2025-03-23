@@ -6,9 +6,9 @@ import { makeClassName } from '@utils';
 
 const UnauthorizedLayout = () => {
   return (
-    <div className={makeClassName('landing-layout')}>
+    <div className={makeClassName('unauth-layout')}>
       <UnauthHeader />
-      <div className={makeClassName('landing-layout', 'container') }>
+      <div className={makeClassName('unauth-layout', 'container') }>
         <Outlet />
       </div>
     </div>

@@ -1,0 +1,22 @@
+{
+  "fontSize": "20px",
+  "graphVizOptions": {
+    "G": {
+      "rankdir": "LR"
+    }
+  },
+  "detectiveOptions": {
+    "ts": {
+      "mixedImports": true
+    }
+  },
+  "tsConfig": "./tsconfig.json",
+  "layout": "dot",
+  "fileExtensions": [
+    "ts",
+    "tsx"
+  ],
+  "nodeColor": "#5281be",
+  "noDependencyColor": "#60ce97",
+  "cyclicNodeColor": "#880f0f"
+}

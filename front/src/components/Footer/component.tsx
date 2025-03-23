@@ -1,7 +1,7 @@
-import { Text } from '@components';
+import { Text } from '@components/core';
 import { makeClassName } from '@utils';
 
-import "./component.css"
+import './component.css';
 
 const Footer = () => {
   return (

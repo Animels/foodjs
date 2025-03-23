@@ -1,4 +1,4 @@
-import { Delimeter, Text } from '@components';
+import { Delimeter, Text } from '@components/core';
 import { makeClassName } from '@utils';
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';

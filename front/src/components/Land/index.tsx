@@ -1,4 +1,4 @@
-import { Text } from '@components';
+import { Text } from '@components/core';
 import { makeClassName } from '@utils';
 import { ReactNode } from 'react';
 

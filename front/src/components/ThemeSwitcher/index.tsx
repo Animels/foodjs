@@ -1,5 +1,5 @@
+import { Switch } from '@components/core';
 import { useTheme } from '@context';
-import { Switch } from 'components/Switch';
 
 const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();

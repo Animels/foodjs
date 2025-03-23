@@ -34,7 +34,7 @@ const RestaurantPage = () => {
                   {res!.data.Menu.menu_category?.map((el, index) => (
                     <MenuCategory key={index} label={el.name} products={el.products}></MenuCategory>
                   ))}
-                  <MenuCategory key={'all'} label={'All products'} products={res!.data.products!}></MenuCategory>
+                  <MenuCategory label={'All products'} products={res!.data.products!}></MenuCategory>
                 </div>
                 <Sidebar restId={Number(id)} />
               </div>

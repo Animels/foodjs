@@ -1,20 +1,12 @@
-import { Header, Icon, Text } from '@components';
+import { Header } from '@components/Header';
+import { ICON_TYPES, Icon, Text } from '@components/core';
 import { useStepContext } from '@context';
 import { makeClassName } from '@utils';
-import { ICON_TYPES } from 'components/Icon/types';
-import { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
-import { FieldValues, UseFormReset } from 'react-hook-form';
+import { FieldValues } from 'react-hook-form';
 
 import './index.css';
-
-type ModalProps<T extends FieldValues> = {
-  children: ReactNode;
-  className?: string;
-  onClose?: (any: boolean) => void;
-  modalLabel?: string;
-  reset?: UseFormReset<T>;
-};
+import { ModalProps } from './types';
 
 const Modal = <T extends FieldValues>({ onClose, children, modalLabel, className, reset }: ModalProps<T>) => {
   const { stepState } = useStepContext();
@@ -52,4 +44,3 @@ const Modal = <T extends FieldValues>({ onClose, children, modalLabel, className
 };
 
 export { Modal };
-export type { ModalProps };

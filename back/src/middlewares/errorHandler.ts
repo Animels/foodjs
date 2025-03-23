@@ -1,35 +1,26 @@
 import { Prisma } from '@prisma/client';
-import { NextFunction, Request, Response } from 'express';
+import { ErrorRequestHandler } from 'express';
 
-export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
+export const errorHandler: ErrorRequestHandler = (err, req, res, next): void => {
   console.log(err);
 
   if (err instanceof Prisma.PrismaClientKnownRequestError) {
     if (err.code === 'P2002') {
       const field = JSON.stringify(err.meta?.target);
-      res.status(400).json({
-        success: false,
-        message: `A ${field} with such values are already exist`,
-      });
+      res.sendResponse(false, null, `A ${field} with such values already exists`, 400);
+      return;
     }
 
     if (err.code === 'P2003') {
-      res.status(400).json({
-        success: false,
-        message: `Key constrains violation for ${err.meta?.field_name}`,
-      });
+      res.sendResponse(false, null, `Key constraint violation for ${err.meta?.field_name}`, 400);
+      return;
     }
 
     if (err.code === 'P2025') {
-      res.status(400).json({
-        success: false,
-        message: `Did not found such ${err.meta?.modelName}`,
-      });
+      res.sendResponse(false, null, `Did not find such ${err.meta?.modelName}`, 400);
+      return;
     }
-  } else {
-    res.status(500).json({
-      success: false,
-      message: `Some error happened`,
-    });
   }
+
+  res.sendResponse(false, null, `Some error happened`, 400);
 };

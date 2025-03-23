@@ -1,17 +1,9 @@
 export const generateId = () => {
   const str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-  const getRandSymbol = () => {
-    const index = Math.floor(Math.random() * 100) ;
-    if (index > str.length) getRandSymbol();
-    return str[index];
-  };
+  const getRandSymbol = () => str[Math.floor(Math.random() * str.length)];
 
-  return Array.from({ length: 4 })
-    .map(() =>
-      Array.from({ length: 4 })
-        .map(() => getRandSymbol())
-        .join('')
-    )
-    .join('-');
+  return Array.from({ length: 4 }, () =>
+    Array.from({ length: 4 }, getRandSymbol).join('')
+  ).join('-');
 };

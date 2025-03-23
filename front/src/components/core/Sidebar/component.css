@@ -1,0 +1,21 @@
+.sidebar {
+  position: sticky;
+  top: 100px;
+  max-height: calc(100vh - 168px);
+
+  flex: 0 0 12em;
+  background-color: var(--bg-secondary);
+
+  border: 2px black solid;
+  border-radius: var(--radius-m);
+
+  padding: var(--space-l);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--space-m);
+
+  align-self: flex-start;
+
+  overflow-y: scroll;
+}

@@ -1,4 +1,4 @@
-import { ToSuspend } from 'components/ToSuspend';
+import { ToSuspend } from '@components/core/ToSuspend';
 import { Suspense } from 'react';
 
 import { Sidebar } from './component';
